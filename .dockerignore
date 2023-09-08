@@ -1,0 +1,25 @@
+# Exclude common development files
+.dockerignore
+.git
+.gitignore
+__pycache__
+*.pyc
+
+# Exclude editor-specific files
+.vscode/
+*.sublime-workspace
+*.swp
+
+# Exclude test files
+tests/
+
+# Exclude any local environment files
+.env
+
+# Exclude Docker related files
+Dockerfile
+docker-compose.yml
+
+# Exclude any unnecessary directories or files
+node_modules/
+static/

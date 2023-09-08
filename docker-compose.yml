@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    container_name: ml_app
+    ports:
+      - "5000:5000"
+  tensorflow_serving:
+    image: tensorflow/serving
+    container_name: pets
+    ports:
+      - "8501:8501"
+    volumes:
+      - "/app/pets:/models/pets/1" # Replace "/path/to/pets" with your actual path
+    environment:
+      - MODEL_NAME=pets
+  postgres:
+    image: postgres
+    container_name: postgres_db
+    environment:
+      - POSTGRES_DB=project
+      - POSTGRES_USER=project
+      - POSTGRES_PASSWORD=project
+    ports:
+      - "5432:5432"
+    volumes:
+    postgres_data:
