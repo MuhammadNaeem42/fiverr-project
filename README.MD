@@ -25,16 +25,20 @@
 ## Setting Up the Database
 
   - Access the PostgreSQL container:
+
 ```bash
 docker exec -it postgres_db bash
+
   - Connect to the database:
 
 ```bash
 psql -U project project
+
   - Create the project database:
 
 ```sql
 CREATE DATABASE project;
+
   - Create the predictions table:
 
 ```sql
@@ -45,20 +49,24 @@ CREATE TABLE predictions (
     query_time TIMESTAMP,
     response_time TIMESTAMP
 );
+
   - To check the tables:
 
 ```sql
 SELECT * FROM predictions;
+
   - Running the Flask App
 
 ## Install the required Python packages:
 
 ```bash
 pip install -r requirements.txt
+
   - Run the Flask application:
 
 ```bash
 python app.py
+
   - Project Structure
   - Flask App (app.py)
 
@@ -85,6 +93,7 @@ python app.py
   - Uploaded images and other static assets are stored in the static directory.
 
 ## Using the App
+
   - Access the application at http://localhost:5000 in your web browser.
   - Upload an image for classification.
   - The app will classify the image and store the prediction and relevant data in the database.
