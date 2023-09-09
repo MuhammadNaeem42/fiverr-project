@@ -64,3 +64,33 @@ pip install -r requirements.txt
 
 ```bash
 python app.py
+
+##Project Structure
+Flask App (app.py)
+
+The Flask application for image classification and database interaction.
+
+TensorFlow Serving (docker-compose.yml)
+
+Docker Compose file for setting up TensorFlow serving and PostgreSQL.
+
+Model Files
+
+The TensorFlow model files are expected to be present in the ./pets/1 directory.
+
+Database (postgres_db)
+
+The PostgreSQL database container.
+
+Custom Network (my_network)
+
+A custom Docker network to connect the services.
+
+Static Files
+
+Uploaded images and other static assets are stored in the static directory.
+
+##Using the App
+Access the application at http://localhost:5000 in your web browser.
+Upload an image for classification.
+The app will classify the image and store the prediction and relevant data in the database.
