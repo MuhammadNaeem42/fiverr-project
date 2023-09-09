@@ -31,9 +31,6 @@
   - Connect to the database:
   Navigate to the directory containing `docker-compose.yml` and run the following command:
 
-   ```bash
-   docker-compose up -d
-
   ```bash
   psql -U project project
 
