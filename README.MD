@@ -1,46 +1,48 @@
-# TME Flask Postgres Docker Setup Project
-
-## Project Overview
+Project Overview
 This project utilizes Flask, TensorFlow, and Postgres to create a web application that performs image classification using a TensorFlow model served via Docker. The predictions and relevant data are stored in a Postgres database.
 
-### Prerequisites
-- Docker Desktop (for Windows users)
-- Docker Compose
+Prerequisites
+Docker Desktop (for Windows users)
+Docker Compose
+Setup Instructions
+Install Docker
 
-## Setup Instructions
+For Windows users, install Docker Desktop.
+For other platforms, ensure Docker is installed.
+Clone the Repository
 
-1. **Install Docker**
+bash
+Copy code
+git clone <repository_url>
+cd <repository_directory>
+Run Docker Services
 
-   - For Windows users, install Docker Desktop.
-   - For other platforms, ensure Docker is installed.
+Navigate to the directory containing docker-compose.yml and run the following command:
 
-2. **unzip the project**
-
-3. **Run Docker Services**
-
--Navigate to the directory containing docker-compose.yml and run the following command:
-
-```bash
+bash
+Copy code
 docker-compose up -d
- -this will create and start the Docker containers for TensorFlow serving and PostgreSQL.
+This will create and start the Docker containers for TensorFlow serving and PostgreSQL.
 
-4. **Setting Up the Database**
+Setting Up the Database
 
 Access the PostgreSQL container:
 
-```bash
+bash
+Copy code
 docker exec -it postgres_db bash
- -Connect to the database:
+Connect to the database:
 
-```bash
+bash
+Copy code
 psql -U project project
- Create the project database:
+Create the project database:
 
-```bash
+sql
+Copy code
 CREATE DATABASE project;
- Create the predictions table:
+Create the predictions table:
 
-```bash
 sql
 Copy code
 CREATE TABLE predictions (
@@ -50,22 +52,24 @@ CREATE TABLE predictions (
     query_time TIMESTAMP,
     response_time TIMESTAMP
 );
- To check the tables:
+To check the tables:
 
-```sql
+sql
+Copy code
 SELECT * FROM predictions;
- Running the Flask App
+Running the Flask App
 
 Install the required Python packages:
 
-```bash
+bash
+Copy code
 pip install -r requirements.txt
- Run the Flask application:
+Run the Flask application:
 
-```bash
+bash
+Copy code
 python app.py
-
-##Project Structure
+Project Structure
 Flask App (app.py)
 
 The Flask application for image classification and database interaction.
@@ -90,7 +94,8 @@ Static Files
 
 Uploaded images and other static assets are stored in the static directory.
 
-##Using the App
+Using the App
 Access the application at http://localhost:5000 in your web browser.
 Upload an image for classification.
 The app will classify the image and store the prediction and relevant data in the database.
+For any issues or questions, please refer to the project documentation or contact the project maintainers.
