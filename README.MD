@@ -16,3 +16,51 @@ This project utilizes Flask, TensorFlow, and Postgres to create a web applicatio
 
 2. **unzip the project**
 
+3. **Run Docker Services**
+
+Navigate to the directory containing docker-compose.yml and run the following command:
+
+```bash
+docker-compose up -d
+ this will create and start the Docker containers for TensorFlow serving and PostgreSQL.
+
+4. **Setting Up the Database**
+
+Access the PostgreSQL container:
+
+```bash
+docker exec -it postgres_db bash
+ Connect to the database:
+
+```bash
+psql -U project project
+ Create the project database:
+
+```bash
+CREATE DATABASE project;
+ Create the predictions table:
+
+```bash
+sql
+Copy code
+CREATE TABLE predictions (
+    id SERIAL PRIMARY KEY,
+    query VARCHAR(255),
+    response VARCHAR(255),
+    query_time TIMESTAMP,
+    response_time TIMESTAMP
+);
+ To check the tables:
+
+```sql
+SELECT * FROM predictions;
+ Running the Flask App
+
+Install the required Python packages:
+
+```bash
+pip install -r requirements.txt
+ Run the Flask application:
+
+```bash
+python app.py
