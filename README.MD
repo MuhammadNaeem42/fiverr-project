@@ -23,16 +23,15 @@
   - This will create and start the Docker containers for TensorFlow serving and PostgreSQL.
 
 ## Setting Up the Database
-
   - Access the PostgreSQL container:
 
-```bash
-docker exec -it postgres_db bash
+  ```bash
+  docker exec -it postgres_db bash
 
   - Connect to the database:
 
-```bash
-psql -U project project
+  ```bash
+  psql -U project project
 
   - Create the project database:
 
