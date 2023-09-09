@@ -29,20 +29,19 @@
   docker exec -it postgres_db bash
 
   - Connect to the database:
-  Navigate to the directory containing `docker-compose.yml` and run the following command:
 
   ```bash
   psql -U project project
 
   - Create the project database:
 
-```sql
-CREATE DATABASE project;
+  ```sql
+  CREATE DATABASE project;
 
   - Create the predictions table:
 
-```sql
-CREATE TABLE predictions (
+  ```sql
+  CREATE TABLE predictions (
     id SERIAL PRIMARY KEY,
     query VARCHAR(255),
     response VARCHAR(255),
@@ -52,20 +51,20 @@ CREATE TABLE predictions (
 
   - To check the tables:
 
-```sql
-SELECT * FROM predictions;
+  ```sql
+  SELECT * FROM predictions;
 
   - Running the Flask App
 
 ## Install the required Python packages:
 
-```bash
-pip install -r requirements.txt
+  ```bash
+  pip install -r requirements.txt
 
   - Run the Flask application:
 
-```bash
-python app.py
+  ```bash
+  python app.py
 
   - Project Structure
   - Flask App (app.py)
@@ -97,4 +96,3 @@ python app.py
   - Access the application at http://localhost:5000 in your web browser.
   - Upload an image for classification.
   - The app will classify the image and store the prediction and relevant data in the database.
-
