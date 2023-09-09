@@ -13,9 +13,6 @@ __pycache__
 # Exclude test files
 tests/
 
-# Exclude any local environment files
-.env
-
 # Exclude Docker related files
 Dockerfile
 docker-compose.yml
