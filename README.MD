@@ -18,11 +18,11 @@ This project utilizes Flask, TensorFlow, and Postgres to create a web applicatio
 
 3. **Run Docker Services**
 
-Navigate to the directory containing docker-compose.yml and run the following command:
+-Navigate to the directory containing docker-compose.yml and run the following command:
 
 ```bash
 docker-compose up -d
- this will create and start the Docker containers for TensorFlow serving and PostgreSQL.
+ -this will create and start the Docker containers for TensorFlow serving and PostgreSQL.
 
 4. **Setting Up the Database**
 
@@ -30,7 +30,7 @@ Access the PostgreSQL container:
 
 ```bash
 docker exec -it postgres_db bash
- Connect to the database:
+ -Connect to the database:
 
 ```bash
 psql -U project project
