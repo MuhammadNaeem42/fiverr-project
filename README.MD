@@ -1,50 +1,43 @@
 # Project Overview
 ## This project utilizes Flask, TensorFlow, and Postgres to create a web application that performs image classification using a TensorFlow model served via Docker. The predictions and relevant data are stored in a Postgres database.
 
-Prerequisites
-Docker Desktop (for Windows users)
-Docker Compose
-Setup Instructions
-Install Docker
+# Prerequisites
+- Docker Desktop (for Windows users)
+- Docker Compose
+## Setup Instructions
 
-For Windows users, install Docker Desktop.
-For other platforms, ensure Docker is installed.
-Clone the Repository
+1. **Install Docker**
 
-bash
-Copy code
-git clone <repository_url>
-cd <repository_directory>
-Run Docker Services
+   - For Windows users, install Docker Desktop.
+   - For other platforms, ensure Docker is installed.
 
-Navigate to the directory containing docker-compose.yml and run the following command:
+2. **Unzip the Project**
 
-bash
-Copy code
-docker-compose up -d
-This will create and start the Docker containers for TensorFlow serving and PostgreSQL.
+3. **Run Docker Services**
 
-Setting Up the Database
+   Navigate to the directory containing `docker-compose.yml` and run the following command:
 
-Access the PostgreSQL container:
+   ```bash
+   docker-compose up -d
 
-bash
-Copy code
+- This will create and start the Docker containers for TensorFlow serving and PostgreSQL.
+
+## Setting Up the Database
+
+- Access the PostgreSQL container:
+```bash
 docker exec -it postgres_db bash
-Connect to the database:
+- Connect to the database:
 
-bash
-Copy code
+```bash
 psql -U project project
-Create the project database:
+- Create the project database:
 
-sql
-Copy code
+```sql
 CREATE DATABASE project;
-Create the predictions table:
+- Create the predictions table:
 
-sql
-Copy code
+```sql
 CREATE TABLE predictions (
     id SERIAL PRIMARY KEY,
     query VARCHAR(255),
@@ -52,50 +45,47 @@ CREATE TABLE predictions (
     query_time TIMESTAMP,
     response_time TIMESTAMP
 );
-To check the tables:
+- To check the tables:
 
-sql
-Copy code
+```sql
 SELECT * FROM predictions;
-Running the Flask App
+- Running the Flask App
 
-Install the required Python packages:
+## Install the required Python packages:
 
-bash
-Copy code
+```bash
 pip install -r requirements.txt
-Run the Flask application:
+- Run the Flask application:
 
-bash
-Copy code
+```bash
 python app.py
-Project Structure
-Flask App (app.py)
+- Project Structure
+- Flask App (app.py)
 
-The Flask application for image classification and database interaction.
+## The Flask application for image classification and database interaction.
 
-TensorFlow Serving (docker-compose.yml)
+- TensorFlow Serving (docker-compose.yml)
 
-Docker Compose file for setting up TensorFlow serving and PostgreSQL.
+- Docker Compose file for setting up TensorFlow serving and PostgreSQL.
 
-Model Files
+## Model Files
 
-The TensorFlow model files are expected to be present in the ./pets/1 directory.
+- The TensorFlow model files are expected to be present in the ./pets/1 directory.
 
-Database (postgres_db)
+- Database (postgres_db)
 
-The PostgreSQL database container.
+## The PostgreSQL database container.
 
-Custom Network (my_network)
+- Custom Network (my_network)
 
-A custom Docker network to connect the services.
+- A custom Docker network to connect the services.
 
-Static Files
+## Static Files
 
-Uploaded images and other static assets are stored in the static directory.
+- Uploaded images and other static assets are stored in the static directory.
 
-Using the App
-Access the application at http://localhost:5000 in your web browser.
-Upload an image for classification.
-The app will classify the image and store the prediction and relevant data in the database.
-For any issues or questions, please refer to the project documentation or contact the project maintainers.
+## Using the App
+- Access the application at http://localhost:5000 in your web browser.
+- Upload an image for classification.
+- The app will classify the image and store the prediction and relevant data in the database.
+
