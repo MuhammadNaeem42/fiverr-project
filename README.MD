@@ -23,7 +23,7 @@
   - This will create and start the Docker containers for TensorFlow serving and PostgreSQL.
 
 ## Setting Up the Database
-  - Access the PostgreSQL container:
+  - Access the PostgreSQL container:try this command 'docker exec -it postgres_db bash'
 
   ```bash
   docker exec -it postgres_db bash
